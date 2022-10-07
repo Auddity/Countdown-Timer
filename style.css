@@ -14,10 +14,15 @@ body {
   height: 100vh;
 }
 
+.container {
+  width: 90%;
+  max-width: 1000px;
+}
+
 .timer-ctnr {
   display: flex;
   align-items: center;
-  margin: auto;
+  justify-content: center;
 }
 
 .form-control {
@@ -39,22 +44,22 @@ input, button {
   height: 50px;
   padding: 10px;
   border: none;
+  appearance: textfield;
+  -moz-appearance: textfield;
 }
 input::-webkit-inner-spin-button, 
 input::-webkit-outer-spin-button {
+  display: none;
+  appearance: none;
   -webkit-appearance: none;
-  /* appearance: none; */
-  /* display: none//; */
+  -moz-appearance: none;
 }
 
 .display-ctnr {
   display: grid;
   align-content: center;
-  width: 100%;
   height: 50px;
   padding: 10px 25px;
-/*   border: 2px solid var(--Start);
-  border-radius: 7px; */
   font-size: 30px
 }
 
@@ -80,7 +85,7 @@ button {
 }
 .reset {
   background: var(--Reset);
-  width: 70px;
+  width: auto;
 }
 
 .hide {

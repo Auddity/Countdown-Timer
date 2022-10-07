@@ -16,7 +16,7 @@ let timerStop = 0;
 let start = false;
 let granted = false;
 
-// Hide/Show Label
+// DOM Functions
 inputs.forEach((input, i) => {
   input.addEventListener('focus', e => {
     checkNotificationPermission();
@@ -30,6 +30,10 @@ function hideLabel(input, idx) {
 }
 function showLabel(input, idx) {
   if(input.value === '') labels[idx].style.display = 'block';
+}
+
+function clearInputs() {
+  inputs.forEach(input => input.value = '')
 }
 
 // Countdown Functions
@@ -95,7 +99,7 @@ pauseBtn.addEventListener('click', () => {
 resetBtn.addEventListener('click', () => {
   endTime = undefined
   inputs.forEach((input, idx) => {
-    input.value = ''
+    clearInputs();
     showLabel(input, idx)
     formControls[idx].classList.remove('hide')
     displays[idx].innerText = ''
@@ -145,3 +149,11 @@ const hideError = () =>  {
   error.style.display = 'none'
   error.textContent = '';
 }
+
+// On Page Unload
+window.addEventListener('beforeunload', e => {
+  const confirmationMessage = "U Wot M8??"
+  clearInputs();
+  (e || window.event).returnValue = confirmationMessage;
+  return confirmationMessage;
+})

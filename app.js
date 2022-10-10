@@ -57,13 +57,14 @@ function updateCountdown() {
   let hours = Math.floor(diff / oneHour)
   let minutes = Math.floor((diff % oneHour) / oneMinute)
   let seconds = Math.floor((diff % oneMinute) / 1000)
+  timerStop = diff;
 
   let values = [hours, minutes, seconds]
   displays.forEach((el, i) => {
-    el.innerHTML = values[i] < 10 ? '0' + `${values[i]}` : `${values[i]}`;
+    if(timerStop < 0) el.textContent = '00';
+    if(timerStop > 0) el.textContent = values[i] < 10 ? '0' + `${values[i]}` : `${values[i]}`;
   })
-
-  timerStop = diff;
+  
 
   if(timerStop <= 0) callNotification()
 }

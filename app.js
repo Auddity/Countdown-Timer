@@ -90,8 +90,12 @@ startBtn.addEventListener('click', () => {
 pauseBtn.addEventListener('click', () => {
   start = !start;
   pauseBtn.innerText = 'Resume'
+  if(!start) {
+    // pauseBtn.style.backgroundColor = '#21aa1d'
+  }
   if(start) {
     pauseBtn.innerText = 'Pause';
+    // pauseBtn.style.backgroundColor = '#e9c63b'
   }
 })
 

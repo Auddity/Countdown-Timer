@@ -10,33 +10,37 @@
 <body>
   <div class="container">
     <h1>Countdown Timer</h1>
-    <div class="timer-ctnr">
-      <div class="form-control">
-        <label for="hour" aria-label="hours">HH</label>
-        <input type="number" id="hour">
+    <div class="timer-flex-container">
+      <div class="timer-ctnr">
+        <div class="form-control">
+          <label for="hour" aria-label="hours">HH</label>
+          <input type="number" id="hour">
+        </div>
+        <div class="display-ctnr hide">
+          <p class="display"></p>
+        </div>
+        <p class="divider">:</p>
+        <div class="form-control">
+          <label for="minute" aria-label="minutes">MM</label>
+          <input type="number" id="minute">
+        </div>
+        <div class="display-ctnr hide">
+          <p class="display"></p>
+        </div>
+        <p class="divider">:</p>
+        <div class="form-control">
+          <label for="second" aria-label="seconds">SS</label>
+          <input type="number" id="second">
+        </div>
+        <div class="display-ctnr hide">
+          <p class="display"></p>
+        </div>
+    </div>
+      <div class="button-container">
+        <button id="start" class="start">Start</button>
+        <button id="pause" class="pause hide">Pause</button>
+        <button id="reset" class="reset hide">Reset</button>
       </div>
-      <div class="display-ctnr hide">
-        <p class="display"></p>
-      </div>
-      <p class="divider">:</p>
-      <div class="form-control">
-        <label for="minute" aria-label="minutes">MM</label>
-        <input type="number" id="minute">
-      </div>
-      <div class="display-ctnr hide">
-        <p class="display"></p>
-      </div>
-      <p class="divider">:</p>
-      <div class="form-control">
-        <label for="second" aria-label="seconds">SS</label>
-        <input type="number" id="second">
-      </div>
-      <div class="display-ctnr hide">
-        <p class="display"></p>
-      </div>
-      <button id="start" class="start">Start</button>
-      <button id="pause" class="pause hide">Pause</button>
-      <button id="reset" class="reset hide">Reset</button>
     </div>
   </div>
 

@@ -69,13 +69,11 @@ function updateCountdown() {
     if(timerStop < 0) el.textContent = '00';
     if(timerStop > 0) el.textContent = values[i] < 10 ? '0' + `${values[i]}` : `${values[i]}`;
   })
-  
 
   if(timerStop <= 0) {
     callNotification()
-    timesUpCtnr.classList.remove('hide')
+    timesUpCtnr.classList.remove('hide');
   }
-  
 }
 
 // Update Elements on Start
@@ -100,12 +98,8 @@ startBtn.addEventListener('click', () => {
 pauseBtn.addEventListener('click', () => {
   start = !start;
   pauseBtn.innerText = 'Resume'
-  // if(!start) {
-  //   // pauseBtn.style.backgroundColor = '#21aa1d'
-  // }
   if(start) {
     pauseBtn.innerText = 'Pause';
-    // pauseBtn.style.backgroundColor = '#e9c63b'
   }
 })
 
@@ -122,7 +116,7 @@ resetBtn.addEventListener('click', () => {
     resetBtn.classList.add('hide')
     startBtn.classList.remove('hide')
   })
-  timesUpCtnr.classList.add('hide')
+  timesUpCtnr.classList.add('hide');
   start = false;
 })
 
@@ -155,7 +149,7 @@ const callNotification = () => {
 
 const showError = () => {
   const error = document.querySelector('.error');
-  error.style.display = 'block';
+  error.style.display = 'block'
   error.textContent = 'Notifications are blocked';
 }
 

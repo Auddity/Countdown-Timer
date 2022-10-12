@@ -160,9 +160,9 @@ const hideError = () =>  {
 }
 
 // On Page Unload
-// window.addEventListener('beforeunload', e => {
-//   const confirmationMessage = "U Wot M8??"
-//   clearInputs();
-//   (e || window.event).returnValue = confirmationMessage;
-//   return confirmationMessage;
-// })
+window.addEventListener('beforeunload', e => {
+  const confirmationMessage = "U Wot M8??"
+  clearInputs();
+  (e || window.event).returnValue = confirmationMessage;
+  return confirmationMessage;
+})

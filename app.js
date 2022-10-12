@@ -17,6 +17,10 @@ let timerStop = 0;
 let start = false;
 let granted = false;
 
+window.addEventListener('DOMContentLoaded', () => {
+  inputs.forEach(el => el.value = '');
+})
+
 // DOM Functions
 inputs.forEach((input, i) => {
   input.addEventListener('focus', e => {

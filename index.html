@@ -10,7 +10,7 @@
 <body>
   <div class="container">
     <h1>Countdown Timer</h1>
-    <div class="timer-flex-container">
+    <!-- <div class="timer-flex-container"> -->
       <div class="timer-ctnr">
         <div class="form-control">
           <label for="hour" aria-label="hours">HH</label>
@@ -35,16 +35,17 @@
         <div class="display-ctnr hide">
           <p class="display"></p>
         </div>
-    </div>
+      </div>
+
       <div class="button-container">
         <button id="start" class="start">Start</button>
         <button id="pause" class="pause hide">Pause</button>
         <button id="reset" class="reset hide">Reset</button>
       </div>
-    </div>
+    <!-- </div> -->
     <div class="error" style="color: rgb(255, 40, 32)"></div>
   
-    <div class="times-up hide" id="times-up">
+    <div class="times-up no-visibility" id="times-up">
       <p>Time's Up!</p>
     </div>
   </div>

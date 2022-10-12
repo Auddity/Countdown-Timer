@@ -15,10 +15,8 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  align-content: center;
   background-color: var(--Bg);
   color: var(--Text);
   text-align: center;
@@ -28,9 +26,11 @@ body {
 }
 
 .container {
+  /* align-self: center; */
   width: 90%;
+  height: 100%;
   max-width: 1000px;
-  margin-block-start: -200px;
+  margin-inline: auto;
 }
 
 .timer-ctnr {
@@ -118,8 +118,7 @@ button {
 }
 
 .times-up {
-  height: 84px;
-  padding-block-start: 2.5rem;
+  height: 100px;
   font-weight: bold;
 }
 
@@ -128,4 +127,8 @@ button {
 }
 .show {
   display: block;
+}
+
+.no-visibility {
+  visibility: hidden;
 }

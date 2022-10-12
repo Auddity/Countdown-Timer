@@ -113,8 +113,14 @@ button {
 }
 
 .error {
-  margin-block-start: 3rem;
+  padding-block-start: 3rem;
   color: var(--Reset);
+}
+
+.times-up {
+  height: 84px;
+  padding-block-start: 2.5rem;
+  font-weight: bold;
 }
 
 .hide {

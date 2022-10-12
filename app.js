@@ -11,6 +11,7 @@ const labels = document.querySelectorAll('label');
 const displays = document.querySelectorAll('.display');
 const formControls = document.querySelectorAll('.form-control');
 const displayCtnrs = document.querySelectorAll('.display-ctnr');
+const timesUpCtnr = document.getElementById('times-up');
 let endTime;
 let timerStop = 0;
 let start = false;
@@ -66,7 +67,11 @@ function updateCountdown() {
   })
   
 
-  if(timerStop <= 0) callNotification()
+  if(timerStop <= 0) {
+    callNotification()
+    timesUpCtnr.classList.remove('hide')
+  }
+  
 }
 
 // Update Elements on Start
@@ -91,9 +96,9 @@ startBtn.addEventListener('click', () => {
 pauseBtn.addEventListener('click', () => {
   start = !start;
   pauseBtn.innerText = 'Resume'
-  if(!start) {
-    // pauseBtn.style.backgroundColor = '#21aa1d'
-  }
+  // if(!start) {
+  //   // pauseBtn.style.backgroundColor = '#21aa1d'
+  // }
   if(start) {
     pauseBtn.innerText = 'Pause';
     // pauseBtn.style.backgroundColor = '#e9c63b'
@@ -113,6 +118,7 @@ resetBtn.addEventListener('click', () => {
     resetBtn.classList.add('hide')
     startBtn.classList.remove('hide')
   })
+  timesUpCtnr.classList.add('hide')
   start = false;
 })
 
@@ -156,9 +162,9 @@ const hideError = () =>  {
 }
 
 // On Page Unload
-window.addEventListener('beforeunload', e => {
-  const confirmationMessage = "U Wot M8??"
-  clearInputs();
-  (e || window.event).returnValue = confirmationMessage;
-  return confirmationMessage;
-})
+// window.addEventListener('beforeunload', e => {
+//   const confirmationMessage = "U Wot M8??"
+//   clearInputs();
+//   (e || window.event).returnValue = confirmationMessage;
+//   return confirmationMessage;
+// })

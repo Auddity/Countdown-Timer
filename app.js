@@ -91,7 +91,9 @@ startBtn.addEventListener('click', () => {
     if(input.value === '') return;
     startCountdown();
     updateElements();
+    console.log(input.value);
   })
+  console.log(endTime, timerStop, start);
 })
 
 // Pause Timer
@@ -106,6 +108,7 @@ pauseBtn.addEventListener('click', () => {
 // Reset
 resetBtn.addEventListener('click', () => {
   endTime = undefined
+  timerStop = 0;
   inputs.forEach((input, idx) => {
     clearInputs();
     showLabel(input, idx)
@@ -115,9 +118,11 @@ resetBtn.addEventListener('click', () => {
     pauseBtn.classList.add('hide')
     resetBtn.classList.add('hide')
     startBtn.classList.remove('hide')
+    console.log(input.value)
   })
   timesUpCtnr.classList.add('hide');
   start = false;
+  console.log(endTime, timerStop, start);
 })
 
 setInterval(() => {
@@ -160,9 +165,9 @@ const hideError = () =>  {
 }
 
 // On Page Unload
-window.addEventListener('beforeunload', e => {
-  const confirmationMessage = "U Wot M8??"
-  clearInputs();
-  (e || window.event).returnValue = confirmationMessage;
-  return confirmationMessage;
-})
+// window.addEventListener('beforeunload', e => {
+//   const confirmationMessage = "U Wot M8??"
+//   clearInputs();
+//   (e || window.event).returnValue = confirmationMessage;
+//   return confirmationMessage;
+// })

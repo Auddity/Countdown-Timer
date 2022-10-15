@@ -12,6 +12,7 @@ const displays = document.querySelectorAll('.display');
 const formControls = document.querySelectorAll('.form-control');
 const displayCtnrs = document.querySelectorAll('.display-ctnr');
 const timesUpCtnr = document.getElementById('times-up');
+
 let endTime;
 let timerStop = 0;
 let start = false;
@@ -91,9 +92,7 @@ startBtn.addEventListener('click', () => {
     if(input.value === '') return;
     startCountdown();
     updateElements();
-    console.log(input.value);
   })
-  console.log(endTime, timerStop, start);
 })
 
 // Pause Timer
@@ -118,11 +117,9 @@ resetBtn.addEventListener('click', () => {
     pauseBtn.classList.add('hide')
     resetBtn.classList.add('hide')
     startBtn.classList.remove('hide')
-    console.log(input.value)
   })
   timesUpCtnr.classList.add('hide');
   start = false;
-  console.log(endTime, timerStop, start);
 })
 
 setInterval(() => {
@@ -165,9 +162,20 @@ const hideError = () =>  {
 }
 
 // On Page Unload
-// window.addEventListener('beforeunload', e => {
-//   const confirmationMessage = "U Wot M8??"
-//   clearInputs();
-//   (e || window.event).returnValue = confirmationMessage;
-//   return confirmationMessage;
-// })
+window.addEventListener('beforeunload', e => {
+  const confirmationMessage = "U Wot M8??"
+  clearInputs();
+  (e || window.event).returnValue = confirmationMessage;
+  return confirmationMessage;
+})
+
+// Handle Light & Dark
+const darkMode = document.getElementById('dark-mode-btn');
+const body = document.querySelector('body');
+const light = document.querySelector('.light')
+const dark = document.querySelector('.dark')
+darkMode.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  light.classList.toggle('move-right')
+  dark.classList.toggle('move-left');
+})
